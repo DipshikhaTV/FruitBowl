@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class FruitBowl {
-public ArrayList<FruitBowl> fruitBowls = new ArrayList<FruitBowl>();
+	
+  public List<FruitBowl> fruitBowls = new ArrayList<FruitBowl>();
  
 	
   public void addFruit(FruitBowl fruit) {

@@ -85,6 +85,6 @@ public class FruitBowlTest {
 		  for ( FruitBowl fruitBowl : orangeBowl) {
 			  Assert.assertTrue(fruitBowl  instanceof Oranges);
 		  }		
-	   }
+	  }
 
 }
