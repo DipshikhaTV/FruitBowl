@@ -1,7 +1,7 @@
 package main;
 
  
-public class Apples extends FruitBowl{
+public class Apples extends Fruit{
 	
 }
 	        

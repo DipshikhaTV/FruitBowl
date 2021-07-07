@@ -3,6 +3,6 @@ package main;
 
  
 
-public class Oranges extends FruitBowl{
+public class Oranges extends Fruit{
 	
 }

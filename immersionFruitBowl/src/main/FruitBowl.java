@@ -1,56 +1,58 @@
 package main;
 
 import java.util.ArrayList;
+
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class FruitBowl {
 	
-  public List<FruitBowl> fruitBowls = new ArrayList<FruitBowl>();
-  public List<FruitBowl> appleBowl = new ArrayList<FruitBowl>();
-  public List<FruitBowl> bananaBowl = new ArrayList<FruitBowl>();
-  public List<FruitBowl> orangeBowl = new ArrayList<FruitBowl>();
+  public List<Fruit> fruitBowl;
+  
+
 	
-  public void addFruit(FruitBowl fruit) {
-    fruitBowls.add(fruit);
+  public FruitBowl() {
+	  fruitBowl = new ArrayList<Fruit>();
+  }
+  public void addFruit(Fruit fruit) {
+    fruitBowl.add(fruit);
    }
-  public List<FruitBowl> getFruitBowl() {
-	    return fruitBowls;
+  public List<Fruit> getFruitBowl() {
+	    return fruitBowl;
 	   }
 	  
    
 
  public SegregatedBowls getAppleBowl()
- {
-	  for ( FruitBowl fruitBowl1 : fruitBowls) {
+ {    List<Fruit> appleBowl = new ArrayList<Fruit>();
+	  for ( Fruit fruitBowl1 : fruitBowl) {
 		  if (fruitBowl1  instanceof Apples) {
 			  
 			  appleBowl.add(fruitBowl1);
 				 }
        }
-	  return new SegregatedBowls(appleBowl,appleBowl.size());
+	  return new SegregatedBowls(appleBowl);
  }
  
  public SegregatedBowls getBananaBowl()
- {
-	  for ( FruitBowl fruitBowl1 : fruitBowls) {
+ {    List<Fruit> bananaBowl = new ArrayList<Fruit>();
+	  for ( Fruit fruitBowl1 : fruitBowl) {
 		  if (fruitBowl1  instanceof Bananas) {
 			  
 			  bananaBowl.add(fruitBowl1);
 				 }
        }
-	  return new SegregatedBowls(bananaBowl,bananaBowl.size());
+	  return new SegregatedBowls(bananaBowl);
  }
 
  public SegregatedBowls getOrangeBowl()
- {
-	  for ( FruitBowl fruitBowl1 : fruitBowls) {
+ {    List<Fruit> orangeBowl = new ArrayList<Fruit>();
+	  for ( Fruit fruitBowl1 : fruitBowl) {
 		  if (fruitBowl1  instanceof Oranges) {
 			  
 			  orangeBowl.add(fruitBowl1);
 				 }
        }
-	  return new SegregatedBowls(orangeBowl,orangeBowl.size());
+	  return new SegregatedBowls(orangeBowl);
  }
 
 //public List<FruitBowl> getAppleBowl()

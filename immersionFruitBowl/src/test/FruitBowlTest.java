@@ -1,20 +1,16 @@
  package test;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import main.*;
 import java.util.*;
 
 public class FruitBowlTest {
 	FruitBowl fruitBowl;
-	//FruitBowl apples;
-	//FruitBowl bananas;
-	//FruitBowl oranges;
 	SegregatedBowls segregatedBowls;
 	 
   
-    @BeforeClass
+    @Test
     public void addFruits(){
 	  fruitBowl= new FruitBowl();
 	  fruitBowl.addFruit( new Apples());
@@ -32,8 +28,8 @@ public class FruitBowlTest {
       @Test
       public void verifyFruitBowl() {
   		 
-  	  List<FruitBowl> appleBowl = fruitBowl.getFruitBowl();
-  	  for ( FruitBowl fruitBowl : appleBowl) {
+  	  List<Fruit> appleBowl = fruitBowl.getFruitBowl();
+  	  for ( Fruit fruitBowl : appleBowl) {
   		  Assert.assertTrue(fruitBowl  instanceof Apples || fruitBowl instanceof Bananas || fruitBowl instanceof Oranges);
   	   }
       }
@@ -41,9 +37,9 @@ public class FruitBowlTest {
 	     public void verifyCountofApples() {
 		  segregatedBowls =   fruitBowl.getAppleBowl();
 	    	  Assert.assertEquals(segregatedBowls.getBowlSize(),3);
-              List<FruitBowl> appleBowl = segregatedBowls.getFruitBowl();
+              List<Fruit> appleBowl = segregatedBowls.getFruitBowl();
 	    	  
-	    	  for ( FruitBowl fruitBowl : appleBowl) {
+	    	  for ( Fruit fruitBowl : appleBowl) {
 	    		  Assert.assertTrue(fruitBowl  instanceof Apples);
 	    	   }
 	    }
@@ -51,9 +47,9 @@ public class FruitBowlTest {
 	     public void verifyCountofBananas() {
 		  segregatedBowls =   fruitBowl.getBananaBowl();
 	    	  Assert.assertEquals(segregatedBowls.getBowlSize(),2);
-             List<FruitBowl> bananaBowl = segregatedBowls.getFruitBowl();
+             List<Fruit> bananaBowl = segregatedBowls.getFruitBowl();
 	    	  
-	    	  for ( FruitBowl fruitBowl : bananaBowl) {
+	    	  for ( Fruit fruitBowl : bananaBowl) {
 	    		  Assert.assertTrue(fruitBowl  instanceof Bananas);
 	    	   }
 	    }
@@ -61,12 +57,13 @@ public class FruitBowlTest {
 	     public void verifyCountofOranges() {
 		   segregatedBowls  =   fruitBowl.getOrangeBowl();
 	    	  Assert.assertEquals(segregatedBowls.getBowlSize(),4);
-	    	  List<FruitBowl> orangeBowl = segregatedBowls.getFruitBowl();
+	    	  List<Fruit> orangeBowl = segregatedBowls.getFruitBowl();
 	    	  
-	    	  for ( FruitBowl fruitBowl : orangeBowl) {
+	    	  for ( Fruit fruitBowl : orangeBowl) {
 	    		  Assert.assertTrue(fruitBowl  instanceof Oranges);
 	    	   }
 	    }
+	   
 	   
 //	   @Test
 //     public void verifyAppleBowl() {
