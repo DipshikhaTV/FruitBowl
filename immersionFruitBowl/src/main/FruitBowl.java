@@ -14,50 +14,86 @@ public class FruitBowl {
   public void addFruit(FruitBowl fruit) {
     fruitBowls.add(fruit);
    }
+  public List<FruitBowl> getFruitBowl() {
+	    return fruitBowls;
+	   }
+	  
    
-  public List<FruitBowl> getAppleBowl()
-  {
+
+ public SegregatedBowls getAppleBowl()
+ {
 	  for ( FruitBowl fruitBowl1 : fruitBowls) {
 		  if (fruitBowl1  instanceof Apples) {
 			  
 			  appleBowl.add(fruitBowl1);
 				 }
-        }
-	  return appleBowl;
-  }
-  public List<FruitBowl> getBananaBowl()
-  {
+       }
+	  return new SegregatedBowls(appleBowl,appleBowl.size());
+ }
+ 
+ public SegregatedBowls getBananaBowl()
+ {
 	  for ( FruitBowl fruitBowl1 : fruitBowls) {
 		  if (fruitBowl1  instanceof Bananas) {
 			  
 			  bananaBowl.add(fruitBowl1);
 				 }
-        }
-	  return bananaBowl;
-  }
-  public List<FruitBowl> getOrangeBowl()
-  {
+       }
+	  return new SegregatedBowls(bananaBowl,bananaBowl.size());
+ }
+
+ public SegregatedBowls getOrangeBowl()
+ {
 	  for ( FruitBowl fruitBowl1 : fruitBowls) {
 		  if (fruitBowl1  instanceof Oranges) {
 			  
 			  orangeBowl.add(fruitBowl1);
 				 }
-        }
-	  return orangeBowl;
-  }
-  
- public int getAppleSize()
-  {
-      return appleBowl.size();
-  }
- public int getBananaSize()
- {
-     return appleBowl.size();
- }
- public int getOrangeSize()
- {
-     return orangeBowl.size();
+       }
+	  return new SegregatedBowls(orangeBowl,orangeBowl.size());
  }
 
-	     
+//public List<FruitBowl> getAppleBowl()
+//{
+//	  for ( FruitBowl fruitBowl1 : fruitBowls) {
+//		  if (fruitBowl1  instanceof Apples) {
+//			  
+//			  appleBowl.add(fruitBowl1);
+//				 }
+//     }
+//	  return appleBowl;
+//}
+//public List<FruitBowl> getBananaBowl()
+//{
+//	  for ( FruitBowl fruitBowl1 : fruitBowls) {
+//		  if (fruitBowl1  instanceof Bananas) {
+//			  
+//			  bananaBowl.add(fruitBowl1);
+//				 }
+//     }
+//	  return bananaBowl;
+//}
+//public List<FruitBowl> getOrangeBowl()
+//{
+//	  for ( FruitBowl fruitBowl1 : fruitBowls) {
+//		  if (fruitBowl1  instanceof Oranges) {
+//			  
+//			  orangeBowl.add(fruitBowl1);
+//				 }
+//     }
+//	  return orangeBowl;
+//}
+//
+//public int getAppleSize()
+//{
+//   return appleBowl.size();
+//}
+//public int getBananaSize()
+//{
+//  return appleBowl.size();
+//}
+//public int getOrangeSize()
+//{
+//  return orangeBowl.size();
+//}	     
 }
