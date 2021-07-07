@@ -7,30 +7,57 @@ import java.util.stream.Collectors;
 public class FruitBowl {
 	
   public List<FruitBowl> fruitBowls = new ArrayList<FruitBowl>();
- 
+  public List<FruitBowl> appleBowl = new ArrayList<FruitBowl>();
+  public List<FruitBowl> bananaBowl = new ArrayList<FruitBowl>();
+  public List<FruitBowl> orangeBowl = new ArrayList<FruitBowl>();
 	
   public void addFruit(FruitBowl fruit) {
     fruitBowls.add(fruit);
    }
-  public void addFruits(List<FruitBowl> fruit)  {
-      fruitBowls.addAll(fruit);
-  }
-  public List<FruitBowl> getApples()
+   
+  public List<FruitBowl> getAppleBowl()
   {
-      return fruitBowls.stream().filter(fruit -> fruit instanceof Apples).collect(Collectors.toList());
-  }  
-  public List<FruitBowl> getOranges()
-  {
-      return fruitBowls.stream().filter(fruit -> fruit instanceof Oranges).collect(Collectors.toList());
+	  for ( FruitBowl fruitBowl1 : fruitBowls) {
+		  if (fruitBowl1  instanceof Apples) {
+			  
+			  appleBowl.add(fruitBowl1);
+				 }
+        }
+	  return appleBowl;
   }
-  public List<FruitBowl> getBananas()
+  public List<FruitBowl> getBananaBowl()
   {
-      return fruitBowls.stream().filter(fruit -> fruit instanceof Bananas).collect(Collectors.toList());
+	  for ( FruitBowl fruitBowl1 : fruitBowls) {
+		  if (fruitBowl1  instanceof Bananas) {
+			  
+			  bananaBowl.add(fruitBowl1);
+				 }
+        }
+	  return bananaBowl;
   }
-public int getSizeOfBowl()
+  public List<FruitBowl> getOrangeBowl()
   {
-      return fruitBowls.size();
+	  for ( FruitBowl fruitBowl1 : fruitBowls) {
+		  if (fruitBowl1  instanceof Oranges) {
+			  
+			  orangeBowl.add(fruitBowl1);
+				 }
+        }
+	  return orangeBowl;
   }
+  
+ public int getAppleSize()
+  {
+      return appleBowl.size();
+  }
+ public int getBananaSize()
+ {
+     return appleBowl.size();
+ }
+ public int getOrangeSize()
+ {
+     return orangeBowl.size();
+ }
 
 	     
 }

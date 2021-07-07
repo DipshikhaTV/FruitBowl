@@ -1,4 +1,4 @@
-package test;
+ package test;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -30,41 +30,42 @@ public class FruitBowlTest {
     @Test
     public void segregateApples() {
 	  apples=new FruitBowl();
-      apples.addFruits(fruitBowl.getApples());
+    //  apples.addFruits(fruitBowl.getApples());
+	  apples.getAppleBowl();
 	}
   
     @Test
     public void segregateBananas() {
 	    bananas=new FruitBowl();
-	    bananas.addFruits(fruitBowl.getBananas());
+	    bananas.getBananaBowl();
     }
     
     @Test
     public void segregateOranges() {
 	  oranges=new FruitBowl();
-	  oranges.addFruits(fruitBowl.getOranges());
+	  oranges.getOrangeBowl();
     }
   
 	  
     @Test
     public void verifyCountofApples() {
-	  Assert.assertEquals(apples.getSizeOfBowl(),3);
+	  Assert.assertEquals(apples.getAppleSize(),3);
     }
   
      @Test
      public void verifyCountofBananas() {
-    	  Assert.assertEquals(bananas.getSizeOfBowl(),2);
+    	  Assert.assertEquals(bananas.getBananaSize(),2);
      }
 	 
   
      @Test
      public void verifyCountofOranges() {
-    	  Assert.assertEquals(oranges.getSizeOfBowl(),4);
+    	  Assert.assertEquals(oranges.getOrangeSize(),4);
     }
       @Test
       public void verifyAppleBowl() {
 	 
-	  List<FruitBowl> appleBowl = apples.getApples();
+	  List<FruitBowl> appleBowl = apples.getAppleBowl();
 	  for ( FruitBowl fruitBowl : appleBowl) {
 		  Assert.assertTrue(fruitBowl  instanceof Apples);
 	   }
@@ -72,7 +73,7 @@ public class FruitBowlTest {
 	  @Test
 	  public void verifyBananaBowl() {
 		 
-		  List<FruitBowl> bananaBowl = bananas.getBananas();
+		  List<FruitBowl> bananaBowl = bananas.getBananaBowl();
 		  for ( FruitBowl fruitBowl : bananaBowl) {
 			  Assert.assertTrue(fruitBowl  instanceof Bananas);
 		  }
@@ -81,7 +82,7 @@ public class FruitBowlTest {
 	  @Test
 	  public void verifyOrangeBowl() {
 		 
-		  List<FruitBowl> orangeBowl = oranges.getOranges();
+		  List<FruitBowl> orangeBowl = oranges.getOrangeBowl();
 		  for ( FruitBowl fruitBowl : orangeBowl) {
 			  Assert.assertTrue(fruitBowl  instanceof Oranges);
 		  }		
