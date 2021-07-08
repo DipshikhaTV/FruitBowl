@@ -5,8 +5,10 @@
     <classes>
       <class name="test.FruitBowlTest">
         <methods>
-          <include name="verifyCountofBananas"/>
+          <include name="verifyBananaBowl"/>
           <include name="addFruits"/>
+          <include name="verifyAppleBowl"/>
+          <include name="verifyOrangeBowl"/>
         </methods>
       </class> <!-- test.FruitBowlTest -->
     </classes>

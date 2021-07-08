@@ -1,5 +1,7 @@
 package main;
 
-public class Fruit {
 
+
+public class Fruit {
+	
 }
